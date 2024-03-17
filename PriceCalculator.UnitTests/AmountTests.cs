@@ -6,6 +6,7 @@ namespace PriceCalculator.UnitTests
 {
     public class AmountTests
     {
+
         [Theory]
         [MemberData(nameof(AmountTestData.GivenGrossAndVAT), MemberType = typeof(AmountTestData))]
         public void GivenVATAndGrossValue_shouldCalculate_CorrectNetValue(Amount given, Amount calculated)
