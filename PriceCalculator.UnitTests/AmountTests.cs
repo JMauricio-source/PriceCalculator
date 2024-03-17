@@ -30,6 +30,7 @@ namespace PriceCalculator.UnitTests
             result.Should().Be(calculated.VATValue);
         }
 
+
         [Theory]
         [MemberData(nameof(AmountTestData.GivenNetAndVAT), MemberType = typeof(AmountTestData))]
         public void GivenVATAnd—etValue_shouldCalculate_CorrectGrossValue(Amount given, Amount calculated)
