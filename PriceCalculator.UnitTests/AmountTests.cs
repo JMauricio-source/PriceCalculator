@@ -31,18 +31,17 @@ namespace PriceCalculator.UnitTests
             result.Should().Be(calculated.VATValue);
         }
 
-
-        //[Theory]
-        //[MemberData(nameof(AmountTestData.GivenNetAndVAT), MemberType = typeof(AmountTestData))]
-        //public void GivenVATAnd—etValue_shouldCalculate_CorrectGrossValue(Amount given, Amount calculated)
-        //{
-        //    //Arrange
-        //    var sut = new Amount() { NetValue = given.NetValue, VAT = given.VAT };
-        //    //Act
-        //    var result = sut.CalculateGrossValue();
-        //    //Assert
-        //    result.Should().Be(calculated.GrossValue);
-        //}
+        [Theory]
+        [MemberData(nameof(AmountTestData.GivenGrossAndVAT), MemberType = typeof(AmountTestData))]
+        public void GivenVATAndGrossValue_shouldCalculate_CorrectGrossValue(Amount given, Amount calculated)
+        {
+            //Arrange
+            var sut = new Amount() { NetValue = given.NetValue, VAT = given.VAT };
+            //Act
+            var result = sut.CalculateGrossValue();
+            //Assert
+            result.Should().Be(calculated.GrossValue);
+        }
 
         [Theory]
         [MemberData(nameof(AmountTestData.GivenNetAndVAT), MemberType = typeof(AmountTestData))]
