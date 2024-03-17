@@ -32,8 +32,8 @@ namespace PriceCalculator.UnitTests
         }
 
         [Theory]
-        [MemberData(nameof(AmountTestData.GivenGrossAndVAT), MemberType = typeof(AmountTestData))]
-        public void GivenVATAndGrossValue_shouldCalculate_CorrectGrossValue(Amount given, Amount calculated)
+        [MemberData(nameof(AmountTestData.GivenNetAndVAT), MemberType = typeof(AmountTestData))]
+        public void GivenVATAndNetValue_shouldCalculate_CorrectGrossValue(Amount given, Amount calculated)
         {
             //Arrange
             var sut = new Amount() { NetValue = given.NetValue, VAT = given.VAT };
